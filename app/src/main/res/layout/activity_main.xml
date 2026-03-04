@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pokedex_red">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/pokedex_dark_red">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginEnd="10dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@color/pokedex_blue_light"
+                android:backgroundTint="@color/pokedex_blue_light"/>
+        </androidx.cardview.widget.CardView>
+
+        <View android:layout_width="15dp" android:layout_height="15dp" android:background="#FF0000" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+        <View android:layout_width="15dp" android:layout_height="15dp" android:background="#FFFF00" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+        <View android:layout_width="15dp" android:layout_height="15dp" android:background="#00FF00" android:layout_gravity="center_vertical" android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <EditText
+                android:id="@+id/etPokemonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Ej: bulbasaur o 1"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/bg_search_button"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pokedex_screen_bg"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"/>
+
+</LinearLayout>
