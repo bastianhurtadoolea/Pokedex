@@ -11,47 +11,18 @@
         android:layout_height="60dp"
         android:background="#8B0000"
         android:padding="10dp">
-
         <androidx.cardview.widget.CardView
             android:id="@+id/blue_light"
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="#21A1F1"
-            app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <View
-            android:id="@+id/red_dot"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="12dp"
-            android:background="#FF0000"
-            app:layout_constraintStart_toEndOf="@id/blue_light"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <View
-            android:id="@+id/yellow_dot"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="8dp"
-            android:background="#FFFF00"
-            app:layout_constraintStart_toEndOf="@id/red_dot"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-        <View
-            android:id="@+id/green_dot"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_marginStart="8dp"
-            android:background="#00FF00"
-            app:layout_constraintStart_toEndOf="@id/yellow_dot"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+        <View android:id="@+id/red_dot" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="12dp" android:background="#FF0000" app:layout_constraintStart_toEndOf="@id/blue_light" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
+        <View android:id="@+id/yellow_dot" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="8dp" android:background="#FFFF00" app:layout_constraintStart_toEndOf="@id/red_dot" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
+        <View android:id="@+id/green_dot" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="8dp" android:background="#00FF00" app:layout_constraintStart_toEndOf="@id/yellow_dot" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -61,7 +32,6 @@
         android:orientation="horizontal"
         android:padding="12dp"
         android:gravity="center_vertical">
-
         <EditText
             android:id="@+id/etSearch"
             android:layout_width="0dp"
@@ -72,99 +42,21 @@
             android:paddingHorizontal="16dp"
             android:textColor="#000000"
             android:inputType="text"
-            android:imeOptions="actionSearch" /> <ImageButton
-        android:id="@+id/btnSearch"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:background="#4CAF50"
-        android:src="@android:drawable/ic_menu_search"
-        app:tint="#FFFFFF" />
+            android:imeOptions="actionSearch" />
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:background="#4CAF50"
+            android:src="@android:drawable/ic_menu_search"
+            app:tint="#FFFFFF" />
     </LinearLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cvPokemonCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:visibility="visible">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/screen_frame"
-                android:layout_width="match_parent"
-                android:layout_height="320dp"
-                app:cardCornerRadius="15dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="20dp"
-                        android:background="#8EBAE5" />
-                    <ImageView
-                        android:id="@+id/ivPokemon"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="25dp"
-                        android:scaleType="fitCenter" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:padding="12dp"
-                android:text="¡Busca un Pokémon!"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/iv_dpad"
-                app:layout_constraintTop_toBottomOf="@id/screen_frame" />
-
-            <ImageView
-                android:id="@+id/iv_dpad"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_dpad"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvName"
-                app:layout_constraintBottom_toBottomOf="@id/tvName" />
-
-            <TextView
-                android:id="@+id/tvFlavorText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="#569971"
-                android:padding="16dp"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="Aquí aparecerán las características del Pokémon."
-                app:layout_constraintTop_toBottomOf="@id/tvName" />
-
-            <com.github.mikephil.charting.charts.RadarChart
-                android:id="@+id/radarChart"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="16dp"
-                android:background="#1D3557"
-                app:layout_constraintTop_toBottomOf="@id/tvFlavorText" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent"
+        android:background="#222222" />
 
 </LinearLayout>
